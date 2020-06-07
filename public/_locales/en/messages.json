@@ -1,0 +1,20 @@
+{
+  "ext_name": {
+    "message": "Export cookie JSON file for Puppeteer"
+  },
+  "ext_desc": {
+    "message": "Export a cookie JSON file that can be imported by Puppeteer."
+  },
+  "important_message": {
+    "message": "The cookie may contain important security information such as website session IDs, so please be careful when handling it. (If the session ID is leaked, there is a possibility that your account will be hijacked)"
+  },
+  "download_json": {
+    "message": "Export cookies as JSON"
+  },
+  "no_cookies": {
+    "message": "No cookies are stored on the currently open page"
+  },
+  "error_message": {
+    "message": "An error occurred"
+  }
+}

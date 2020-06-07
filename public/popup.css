@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1em;
+  padding: 0;
+  font-size: 15px;
+}
+
+#content {
+  min-width: 20rem;
+}
+
+.loading {
+  vertical-align: middle;
+}
+
+a, span {
+  white-space: nowrap;
+}
+
+.message {
+  color: #f00;
+}
