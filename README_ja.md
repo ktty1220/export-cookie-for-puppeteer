@@ -4,7 +4,8 @@
 
 ## インストール
 
-ストア掲載準備中です。
+* Google Chrome **ストア掲載準備中です。**
+* [Firefox](https://addons.mozilla.org/ja/firefox/addon/%E3%82%AF%E3%83%83%E3%82%AD%E3%83%BCjson%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%87%BA%E5%8A%9B-for-puppeteer/)
 
 ## 使用方法
 

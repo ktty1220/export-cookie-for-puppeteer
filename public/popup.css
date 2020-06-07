@@ -10,6 +10,7 @@ body {
 
 #content {
   min-width: 20rem;
+  max-width: 26rem;
 }
 
 .loading {
