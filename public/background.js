@@ -11,15 +11,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse(noCookies);
       return;
     }
-    const url = tabs[0].url;
-    if (!/^http/.test(url)) {
+    const target = tabs[0];
+
+    const param = {
+      url: target.url
+    };
+    if (!/^http/.test(param.url)) {
       sendResponse(noCookies);
       return;
     }
 
-    chrome.cookies.getAll({ url }, (cookies) => {
+    if (target.cookieStoreId) {
+      param.storeId = target.cookieStoreId;
+    }
+
+    chrome.cookies.getAll(param, (cookies) => {
       sendResponse({
-        domain: url.match(/\/\/([^/]+)/)[1],
+        domain: new URL(param.url).hostname,
         cookies: cookies.map((c) => {
           const result = {
             name: c.name,
