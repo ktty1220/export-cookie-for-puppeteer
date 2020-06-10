@@ -1,6 +1,6 @@
 # ![icon](public/icon/icon_38.png) クッキーJSONファイル出力 for Puppeteer
 
-[Puppeteer](https://pptr.dev/)でインポート可能なクッキーJSONファイルを出力するブラウザ拡張機能です。
+[Puppeteer](https://pptr.dev/)や[cheerio-httpcli](https://github.com/ktty1220/cheerio-httpcli)でインポート可能なクッキーJSONファイルを出力するブラウザ拡張機能です。
 
 ## インストール
 
@@ -16,6 +16,8 @@
 
 保存したJSONファイルは以下のように使用できます。
 
+### Puppeteer
+
 ```js
 const puppeteer = require('puppeteer');
   .
@@ -28,6 +30,18 @@ for (const cookie of cookies) {
   await page.setCookie(cookie);
 }
 await page.goto(...);
+```
+
+### cheerio-httpcli
+
+```js
+const client = require('cheerio-httpcli');
+  .
+  .
+  .
+const cookies = JSON.parse(fs.readFileSync(<エクスポートしたクッキーJSONファイル>, 'utf-8'));
+client.importCookies(cookies);
+client.fetch(...);
 ```
 
 ## ライセンス

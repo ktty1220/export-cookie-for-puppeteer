@@ -1,6 +1,6 @@
 # ![icon](public/icon/icon_38.png) Export cookie JSON file for Puppeteer
 
-Browser extension that outputs a cookie JSON file that can be imported by [Puppeteer](https://pptr.dev/).
+Browser extension that outputs a cookie JSON file that can be imported by [Puppeteer](https://pptr.dev/) or [cheerio-httpcli](https://github.com/ktty1220/cheerio-httpcli).
 
 ## Install
 
@@ -16,6 +16,8 @@ By clicking on the extension icon, you can save the cookie information stored on
 
 The saved JSON file can be used as follows.
 
+### Puppeteer
+
 ```js
 const puppeteer = require('puppeteer');
   .
@@ -28,6 +30,18 @@ for (const cookie of cookies) {
   await page.setCookie(cookie);
 }
 await page.goto(...);
+```
+
+### cheerio-httpcli
+
+```js
+const client = require('cheerio-httpcli');
+  .
+  .
+  .
+const cookies = JSON.parse(fs.readFileSync(<Exported cookie JSON file>, 'utf-8'));
+client.importCookies(cookies);
+client.fetch(...);
 ```
 
 ## License
