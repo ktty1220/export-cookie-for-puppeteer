@@ -4,7 +4,7 @@ Browser extension that outputs a cookie JSON file that can be imported by [Puppe
 
 ## Install
 
-* Google Chrome **Preparing to publish in the store.**
+* [Google Chrome](https://chrome.google.com/webstore/detail/nmckokihipjgplolmcmjakknndddifde)
 * [Firefox](https://addons.mozilla.org/ja/firefox/addon/%E3%82%AF%E3%83%83%E3%82%AD%E3%83%BCjson%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%87%BA%E5%8A%9B-for-puppeteer/)
 
 ## Usage
