@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "__MSG_ext_name__",
   "description": "__MSG_ext_desc__",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "icons": {
     "16": "icon/icon_16.png",
     "128": "icon/icon_128.png"
   },
-  "default_locale": "ja",
-  "browser_action": {
+  "default_locale": "en",
+  "action": {
     "default_icon": {
       "19": "icon/icon_19.png",
       "38": "icon/icon_38.png"
@@ -17,16 +17,21 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
- "content_security_policy": "script-src 'self'; object-src 'self'",
+  "commands": {
+    "_execute_action": {
+    }
+  },
   "permissions": [
     "tabs",
-    "cookies",
+    "cookies"
+  ],
+  "host_permissions": [
     "http://*/*",
     "https://*/*"
-  ]
+  ],
+  "content_security_policy": {
+    "extension_page": "script-src 'self'; object-src 'self'"
+  }
 }

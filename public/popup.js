@@ -7,7 +7,7 @@ chrome.runtime.sendMessage('getCookies', (res) => {
   let $result = null;
   if (!cookies || cookies.length === 0) {
     $result = document.createElement('span');
-    $result.textContent = chrome.i18n.getMessage('no_cookies'); ;
+    $result.textContent = chrome.i18n.getMessage('no_cookies');
   } else {
     $result = document.createElement('a');
     $result.setAttribute('download', `${domain}.cookies.json`);
