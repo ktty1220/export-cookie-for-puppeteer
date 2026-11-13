@@ -21,10 +21,26 @@ a, span {
   white-space: nowrap;
 }
 
+.control {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .message {
   color: #f00;
 }
 
 .copy {
-  margin-left: 1em;
+  white-space: nowrap;
+}
+
+.copy.result {
+  background: none;
+  outline-color: transparent;
+  border-color: transparent;
+  user-select: none;
+  pointer-events: none;
 }

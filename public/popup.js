@@ -1,16 +1,16 @@
-/* global chrome, Blob */
 document.querySelector('.message').textContent = chrome.i18n.getMessage('important_message');
 
 chrome.runtime.sendMessage('getCookies', (res) => {
   const { domain, cookies } = res;
   const $content = document.querySelector('#content');
-  let $result = null;
+  let $result;
   if (!cookies || cookies.length === 0) {
     $result = document.createElement('span');
     $result.textContent = chrome.i18n.getMessage('no_cookies');
   } else {
     const json = JSON.stringify(cookies, null, 2);
     $result = document.createElement('div');
+    $result.className = 'control';
 
     const $download = document.createElement('a');
     $download.setAttribute('download', `${domain}.cookies.json`);
@@ -27,16 +27,22 @@ chrome.runtime.sendMessage('getCookies', (res) => {
       try {
         await navigator.clipboard.writeText(json);
         $copy.textContent = chrome.i18n.getMessage('copied');
-      } catch (e) {
+      } catch (_e) {
         $copy.textContent = chrome.i18n.getMessage('copy_failed');
+      } finally {
+        $copy.classList.add('result');
       }
       setTimeout(() => {
+        $copy.classList.remove('result');
         $copy.textContent = chrome.i18n.getMessage('copy_json');
       }, 1500);
     });
 
     $result.appendChild($download);
     $result.appendChild($copy);
+    requestAnimationFrame(() => {
+      $copy.style.width = `${$copy.offsetWidth}px`;
+    });
   }
   $content.removeChild(document.querySelector('.loading'));
   $content.appendChild($result);
