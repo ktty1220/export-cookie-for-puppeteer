@@ -16,5 +16,14 @@
   },
   "error_message": {
     "message": "An error occurred"
+  },
+  "copy_json": {
+    "message": "Copy to clipboard"
+  },
+  "copied": {
+    "message": "Copied!"
+  },
+  "copy_failed": {
+    "message": "Copy failed"
   }
 }

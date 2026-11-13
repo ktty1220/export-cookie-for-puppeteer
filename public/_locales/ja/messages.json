@@ -16,5 +16,14 @@
   },
   "error_message": {
     "message": "エラーが発生しました"
+  },
+  "copy_json": {
+    "message": "クリップボードにコピー"
+  },
+  "copied": {
+    "message": "コピーしました"
+  },
+  "copy_failed": {
+    "message": "コピーに失敗しました"
   }
 }
