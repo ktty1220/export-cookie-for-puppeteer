@@ -24,3 +24,7 @@ a, span {
 .message {
   color: #f00;
 }
+
+.copy {
+  margin-left: 1em;
+}
