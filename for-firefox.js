@@ -12,5 +12,12 @@ const manifest = require('./public/manifest.json');
 manifest.background.scripts = [manifest.background.service_worker];
 delete manifest.background.service_worker;
 
+// The add-on ID is required in Manifest Version 3 and above
+manifest.browser_specific_settings = {
+  gecko: {
+    id: 'f025edeb-947f-46f6-b625-e5ad70f99ba6'
+  }
+};
+
 fs.writeFileSync('./public/manifest.json', JSON.stringify(manifest, null, 2));
 console.log('Rewrited');
