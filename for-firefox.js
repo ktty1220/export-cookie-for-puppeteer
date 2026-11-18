@@ -15,7 +15,7 @@ delete manifest.background.service_worker;
 // The add-on ID is required in Manifest Version 3 and above
 manifest.browser_specific_settings = {
   gecko: {
-    id: 'f025edeb-947f-46f6-b625-e5ad70f99ba6'
+    id: '{f025edeb-947f-46f6-b625-e5ad70f99ba6}'
   }
 };
 
