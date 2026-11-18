@@ -12,10 +12,16 @@ const manifest = require('./public/manifest.json');
 manifest.background.scripts = [manifest.background.service_worker];
 delete manifest.background.service_worker;
 
-// The add-on ID is required in Manifest Version 3 and above
 manifest.browser_specific_settings = {
   gecko: {
-    id: '{f025edeb-947f-46f6-b625-e5ad70f99ba6}'
+    // The add-on ID is required in Manifest Version 3 and above
+    id: '{f025edeb-947f-46f6-b625-e5ad70f99ba6}',
+    // data_collection_permissions property is required for all new Firefox extensions
+    data_collection_permissions: {
+      required: [
+        'none'
+      ]
+    }
   }
 };
 
